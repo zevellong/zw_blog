@@ -52,8 +52,8 @@ graph TB
 git init 
 git config user.name zw
 git config user.email zw@pc.com
-git --global config user.name zw
-git --global config user.email zw@pc.com
+git  config --global user.name zw
+git config --global  user.email zw@pc.com
 ```
 
 
