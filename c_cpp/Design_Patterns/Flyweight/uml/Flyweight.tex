@@ -1,0 +1,39 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}
+\usepackage[zihao=-4,UTF8,heading=true]{ctex}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{fit} %形状
+\usetikzlibrary{positioning} %不加方向运算可能出错
+\usetikzlibrary{arrows.meta} %箭头
+\usetikzlibrary{calc}
+
+\setCJKmainfont{微软雅黑}
+\begin{document}
+	\thispagestyle{empty}
+    \begin{tikzpicture}[show background grid]
+        \begin{class}[text width=5cm]{WebSite}{0,0}
+            \operation{ use() : void}
+        \end{class}
+        \begin{class}[]{concreteWebSite}{0,-4}
+            \inherit{WebSite}
+            \operation{ use() : void}
+        \end{class}
+        \begin{class}[]{WebSiteFactory}{-6, 0}
+            \operation{ getWebSiteCategory() : void}
+        \end{class}
+        \aggregation{WebSiteFactory}{}{}{WebSite}
+        \begin{class}[]{Client}{-6, -4}
+        \end{class}
+        \draw [dashed, ->] (Client) -- (WebSiteFactory);
+        \draw [dashed, ->] (Client) -- (concreteWebSite);
+        
+        \begin{class}[]{user}{-4, -6}
+        \end{class}
+        \umlnote [right=1cm of user] {user是享元模式的外部状态};
+        \draw [dashed, ->] (Client) -- (user);
+        \draw [dashed, ->] (concreteWebSite) -- (user);
+        
+    \end{tikzpicture}
+
+\end{document}

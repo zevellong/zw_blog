@@ -1,0 +1,53 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}
+\usepackage[zihao=-4,UTF8,heading=true]{ctex}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{fit} %形状
+\usetikzlibrary{positioning} %不加方向运算可能出错
+\usetikzlibrary{arrows.meta} %箭头
+\usetikzlibrary{calc}
+
+\setCJKmainfont{微软雅黑}
+\begin{document}
+	\thispagestyle{empty}
+    \begin{tikzpicture}[show background grid]
+        \begin{class}[text width=5cm]{TheaterFacade}{2,1}
+            \operation{ ready() : void}
+            \operation{ open() : void}
+            \operation{ close() : void}
+            \operation{ pause() : void}
+        \end{class}
+        
+        \begin{class}[]{Client}{-5, 0}
+        \end{class}
+        \draw [dashed, ->] (Client) -- (TheaterFacade);
+
+        \begin{class}[text width=4cm]{Stereo}{-5, -5}
+            \operation{ on() : void }
+            \operation{ set(disk : CD) : void}
+            \operation{ off() : void}
+        \end{class}
+        
+        \begin{class}[text width=4cm]{Projecter}{0, -5}
+            \operation{ play() : void}
+            \operation{ pause() : ovoid}
+            \operation{ close() : void}
+        \end{class}
+        
+        \begin{class}[text width=4cm]{Screen}{5,-5}
+            \operation{ open() : void}
+            \operation{ close(9) : void}
+            \operation{ down() : void}
+            \operation{ up() : void}
+        \end{class}
+        \node [fit = (Screen)(Stereo)(Projecter),draw=blue,fill=green, 
+        fill opacity=.2, inner sep = 0.3cm] {};
+        \draw [dashed, ->] (TheaterFacade) -- (Stereo);
+        \draw [dashed, ->] (TheaterFacade) -- (Projecter);
+        \draw [dashed, ->] (TheaterFacade) -- (Screen);
+        \draw [<->] (Projecter) -- (Screen);
+        \umlnote [right=1cm of TheaterFacade] {TheaterFacade提供一致的接口，子系统间可以互相调用};o c
+    \end{tikzpicture}
+    
+\end{document}

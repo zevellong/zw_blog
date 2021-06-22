@@ -1,0 +1,41 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}
+\usepackage[zihao=-4,UTF8,heading=true]{ctex}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{fit} %形状
+\usetikzlibrary{positioning} %不加方向运算可能出错
+\usetikzlibrary{arrows.meta} %箭头
+\usetikzlibrary{calc}
+
+\setCJKmainfont{微软雅黑}
+\begin{document}
+	\thispagestyle{empty}
+    \begin{tikzpicture}[show background grid]
+        \begin{class}[]{Org}{0, 3}
+            \attribute{ des : string }
+            \attribute{ name : string }
+            \operation{ add(Org o) : void }
+            \operation{ remove(Org o) : void}
+            \operation{ print() : void}
+        \end{class}
+        \begin{class}[text width=4cm]{University}{6, -3}
+            \attribute{ clg : vector<College>}
+            \inherit{Org}
+        \end{class}
+        \begin{class}[text width=4cm]{College}{0, -3}
+            \attribute{ dpt : vector<Department>}
+            \inherit{Org}
+        \end{class}
+        \begin{class}[text width=4cm]{Department}{-6, -3}
+            \inherit{Org}
+        \end{class}
+        \aggregation{University}{}{}{College}
+        \aggregation{College}{}{}{Department}
+        
+
+        
+
+    \end{tikzpicture}
+
+\end{document}

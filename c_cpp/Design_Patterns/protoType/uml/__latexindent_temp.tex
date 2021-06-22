@@ -1,0 +1,29 @@
+\documentclass[tikz, conver=pdf2svg,utf8]{standalone}
+\usepackage{tikz}
+\usepackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}
+\usepackage[zihao=-4,UTF8,heading=true]{ctex}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{positioning} %不加方向运算可能出错
+\usetikzlibrary{arrows.meta} %箭头
+
+\setCJKmainfont{微软雅黑}
+\begin{document}
+	\thispagestyle{empty}
+    \begin{tikzpicture}[show background grid]
+        \begin{class}[text width=4cm]{sheep}{0,0}
+            \attribute{- name : string}
+            \attribute{- year : int}
+            \attribute{- color: string}
+        \end{class}
+        \begin{class}[text width=2cm]{client}{-6, 0}
+
+        \end{class}
+
+        \draw[umlcd style, black,->, very thick] (client) --
+            node[anchor=south, blue]{\small $dependency$} (sheep);
+        \draw[-Implies, double,line width=0.1cm] (0,-4) -- (0,-5);
+
+
+    \end{tikzpicture}
+
+\end{document}

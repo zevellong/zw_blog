@@ -1,0 +1,57 @@
+\documentclass[tikz]{standalone}
+\usepackage{tikz}
+\usepackage[AutoFakeBold=true,AutoFakeSlant=true]{xeCJK}
+\usepackage[zihao=-4,UTF8,heading=true]{ctex}
+\usepackage[simplified]{pgf-umlcd}
+\usetikzlibrary{fit} %形状
+\usetikzlibrary{positioning} %不加方向运算可能出错
+\usetikzlibrary{arrows.meta} %箭头
+\usetikzlibrary{calc}
+
+\setCJKmainfont{微软雅黑}
+\begin{document}
+	\thispagestyle{empty}
+    \begin{tikzpicture}[show background grid]
+        \begin{class}[text width=5cm]{Command}{0,0}
+            \attribute{-name : string}
+            \operation{+ exec() : void}
+            \operation{+ undo() : void}
+        \end{class}
+        \begin{class}[]{LightRcv}{0,-8}
+            \operation{+ on() : void}
+            \operation{+ off() : void}
+        \end{class}
+        
+        \begin{class}[]{LightOn}{-3,-4}
+            \implement{Command}
+            \operation{+ exec() : void}
+            \operation{+ undo() : void}
+        \end{class}
+        \begin{class}[]{LightOff}{3,-4}
+            \implement{Command}
+            \operation{+ exec() : void}
+            \operation{+ undo() : void}
+        \end{class}
+        \aggregation{LightOn}{}{}{LightRcv}
+        \aggregation{LightOff}{}{}{LightRcv}
+        \begin{class}[]{NoCmd}{9,-4}
+            \implement{Command}
+        \end{class}
+        \umlnote[above=1cm of NoCmd]
+            {简化操作，省略对空的判断};
+        \begin{class}[]{RemoteApp}{-8,0}
+            \attribute{- onCmd[] : array<Command>}
+            \attribute{- offCmd[] : array<Command>}
+        \end{class}
+        \aggregation{RemoteApp}{}{}{Command}
+        \begin{class}[]{Clinet}{-9, -8}
+        
+        \end{class}
+        
+        \draw [dashed, ->] (Clinet) -- (RemoteApp);
+        \draw [dashed, ->] (Clinet) -- (Command);
+        \draw [dashed, ->] (Clinet) -- (LightRcv);
+        
+        
+    \end{tikzpicture}
+\end{document}
