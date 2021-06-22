@@ -159,6 +159,7 @@ find /home/zw/learn/oslearn/5/i/ *.c -size +10k #文件大于10k
 find /home/zw/learn/oslearn/5/i/ *.c -perm 644 #权限644
 
 find -name "*.exe"  -type f -exec rm -rf {} \; #删除当前目录下所有exe文件
+find c_cpp/Design_Patterns/ -regextype posix-egrep -regex ".*\.c(pp)?" #正则表达式
 ```
 
 ## 7. grep
