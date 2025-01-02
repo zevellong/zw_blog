@@ -204,3 +204,17 @@ vscode: Fira Code, Mircosoft Yahei
 系统设置：见图片
 ```
 
+科学计算
+''' shell
+sudo pacman -S openmp intel-oneapi-mkl boost cmake
+sudo pacman -S nvtop cuda  nvidia-container-toolkit armadillo eigen
+''' 
+
+aur手动安装，https://www.bilibili.com/opus/894551953050173443
+
+''' shell
+git clone xx #git clone https://aur.archlinux.org/yay.git
+makepkg -si
+''' shell
+
+
