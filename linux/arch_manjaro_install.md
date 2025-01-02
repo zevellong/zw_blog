@@ -195,6 +195,7 @@ spring
 ```lua
 sudo pacman -S ttf-fira-code
 vscode: Fira Code, Mircosoft Yahei
+使用kfontinst 安装字体
 系统设置：见图片
 ```
 
