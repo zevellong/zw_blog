@@ -87,11 +87,11 @@ sudo conda install spyder=5.0.3
 
 ```shell
 # download iso
-sudo pacman -S perl-tk
+sudo pacman -S perl-tk tcl tk
 sudo mount -o loop texlive.iso /mnt
 sudo mount -o loop -t iso9660 texlive2021.iso /mnt/loop
 cd /mnt
-sudo ./install-tl -gui 
+sudo  perl ./install-tl -gui 
 sudo pacman -S texstudio
 sudo umount
 # 选择添加符号链接
