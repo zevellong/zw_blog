@@ -95,6 +95,11 @@ sudo  perl ./install-tl -gui
 sudo pacman -S texstudio
 sudo umount
 # 选择添加符号链接
+
+#更新
+tlmgr option repository ctan #选择镜像
+tlmgr update --self --all #更新
+tlmgr update --reinstall-forcibly-removed --all #强制更新
 ```
 
 * vscode
