@@ -11,10 +11,14 @@
             "id": "09da7f89f85c222b",
             "type": "leaf",
             "state": {
-              "type": "empty",
-              "state": {},
+              "type": "markdown",
+              "state": {
+                "file": "ml/deepLearning_AndrewNG.md",
+                "mode": "source",
+                "source": false
+              },
               "icon": "lucide-file",
-              "title": "新标签页"
+              "title": "deepLearning_AndrewNG"
             }
           }
         ]
@@ -151,9 +155,13 @@
       "canvas:新建白板": false,
       "daily-notes:打开/创建今天的日记": false,
       "templates:插入模板": false,
-      "command-palette:打开命令面板": false
+      "command-palette:打开命令面板": false,
+      "obsidian-git:Open Git source control": false
     }
   },
   "active": "09da7f89f85c222b",
-  "lastOpenFiles": []
+  "lastOpenFiles": [
+    "ml/Armadillo矩阵操作.md",
+    "linux/安装WSL.md"
+  ]
 }
