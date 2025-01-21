@@ -140,13 +140,23 @@
               "icon": "lucide-list",
               "title": "大纲"
             }
+          },
+          {
+            "id": "8af3287fc1985c32",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {},
+              "icon": "git-pull-request",
+              "title": "Source Control"
+            }
           }
-        ]
+        ],
+        "currentTab": 4
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -159,7 +169,7 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "09da7f89f85c222b",
+  "active": "b31f1de5301bf972",
   "lastOpenFiles": [
     "c_cpp/c++翁凯.md",
     "c_cpp/Design_Patterns/adapter/uml/umlTmp.pdf",
